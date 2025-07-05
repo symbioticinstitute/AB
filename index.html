@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated CBSE & AMU XI Entrance Success Program 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1b6411;
+            --primary-light: #2c8c20;
+            --accent: #10b981;
+            --secondary: #d6336c;
+            --dark: #1f2937;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --light-gray: #e2e8f0;
+            --white: #ffffff;
+            --teal: #0d9488;
+            --blue: #2563eb;
+            --purple: #7e22ce;
+            --orange: #ea580c;
+            --pink: #db2777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            color: var(--dark);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .logo-subtext {
+            font-size: 12px;
+            color: var(--dark);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .about-link {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: 0 4px 12px rgba(27, 100, 17, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(27, 100, 17, 0.4);
+            background: linear-gradient(135deg, var(--primary-light), #0da271);
+        }
+
+        /* Hero Banner */
+        .hero {
+            padding: 80px 5%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            opacity: 0.15;
+        }
+
+        .course-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            backdrop-filter: blur(5px);
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 25px 0 20px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            line-height: 1.3;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 35px;
+            opacity: 0.92;
+            position: relative;
+            z-index: 2;
+            line-height: 1.7;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--darker);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            padding: 30px;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            flex-shrink: 0;
+            font-size: 32px;
+            color: white;
+        }
+
+        .feature-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-content p {
+            color: var(--dark);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Registration Section */
+        .registration {
+            padding: 80px 5%;
+            text-align: center;
+            background: linear-gradient(135deg, #f0fdf4, #d1fae5);
+        }
+
+        .registration-box {
+            background: var(--white);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .registration-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .registration-box h2 {
+            font-size: 2.2rem;
+            color: var(--darker);
+            margin-bottom: 25px;
+        }
+
+        .registration-box p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 35px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .register-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(27, 100, 17, 0.3);
+        }
+
+        .register-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(27, 100, 17, 0.4);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 90%;
+            width: 500px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            position: relative;
+            animation: popIn 0.4s ease-out;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+        }
+
+        .modal-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .phone-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            padding: 25px;
+            background: var(--light);
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .phone-number:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .call-now {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Popup Modal */
+        .popup-modal {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            z-index: 1500;
+            max-width: 400px;
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .popup-header h3 {
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .popup-close {
+            cursor: pointer;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .popup-close:hover {
+            opacity: 1;
+        }
+
+        .popup-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .popup-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .popup-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker);
+            color: var(--light);
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 35px 25px;
+            }
+            
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 25px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.05rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .registration-box {
+                padding: 40px 25px;
+            }
+            
+            .registration-box h2 {
+                font-size: 1.8rem;
+            }
+            
+            .feature-content h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 5%;
+            }
+            
+            .course-tag {
+                font-size: 1rem;
+                padding: 8px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+            }
+            
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+            }
+            
+            .popup-modal {
+                max-width: 90%;
+                right: 5%;
+                left: 5%;
+                bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div>
+                <div class="logo-text">Symbiotic Learning</div>
+                <div class="logo-subtext">Academic Excellence</div>
+            </div>
+        </div>
+        <a href="https://symbioticlearning.com/about" class="about-link">
+            <i class="fas fa-info-circle"></i> About Us
+        </a>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="course-tag">
+            <i class="fas fa-star"></i> New Course Launch
+        </div>
+        <h1>Integrated Board (CBSE) & AMU XI Entrance Success Program-2025</h1>
+        <p>Class XI Entrance examination of Aligarh Muslim University is one of the toughest exams at this level. Every year around 25,000 students appear for roughly 1,500 seats, making the competition extremely fierce.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>Key Features of Our Program</h2>
+            <p>Our integrated approach ensures students build strong fundamentals early while preparing for both CBSE Board exams and the challenging AMU entrance test.</p>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--blue), #3b82f6);">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="feature-content">
+                    <h3 style="color: var(--blue);">Early Foundation & Diagnostic</h3>
+                    <p>Begins well before board exams conclude, with diagnostic assessments of Class IX–X fundamentals to identify gaps early and build a strong foundation.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--teal), #14b8a6);">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="feature-content">
+                    <h3 style="color: var(--teal);">Integrated Syllabus Mapping</h3>
+                    <p>Systematic alignment of Class X revision modules (Physics, Chemistry, Biology/Mathematics or Social Studies) alongside CBSE Class X board preparation.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--purple), #a855f7);">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="feature-content">
+                    <h3 style="color: var(--purple);">Progressive Entrance Prep Track</h3>
+                    <p>Regularly scheduled modules revisiting Class IX–X concepts in AMU-style objective format, with incremental difficulty and timed practice, ensuring no last-minute cramming.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--orange), #f97316);">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="feature-content">
+                    <h3 style="color: var(--orange);">Indo-Islamic Culture & GK Segment</h3>
+                    <p>Dedicated lessons and quizzes on Indo-Islamic Culture and general knowledge in AMU entrance style, delivered regularly to build cumulative familiarity.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 5 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--pink), #ec4899);">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="feature-content">
+                    <h3 style="color: var(--pink);">Frequent Mock Tests & Analytics</h3>
+                    <p>Periodic full-length AMU-style mock exams under timed conditions; analytics dashboards highlight individual strengths and weaknesses, driving targeted remediation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration">
+        <div class="registration-box">
+            <h2>Secure Your Child's Future Today</h2>
+            <p>Limited seats available for our 2025 integrated program. Join hundreds of successful students who have excelled in both CBSE and AMU entrance exams.</p>
+            <button class="register-button" onclick="openContactModal()">
+                <i class="fas fa-edit"></i> Register Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Symbiotic Learning. All Rights Reserved.</p>
+        <p>Transforming Education Through Innovation</p>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contact-modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeContactModal()">×</div>
+            <h3><i class="fas fa-phone-alt"></i> Contact Us to Enroll</h3>
+            <p>Call our admission counselors to discuss the program and register your child:</p>
+            <div class="phone-number">
+                <i class="fas fa-phone"></i> +91-9149822922
+            </div>
+            <p class="call-now">Available Monday-Saturday, 9AM to 7PM</p>
+        </div>
+    </div>
+
+    <!-- Results Popup Modal -->
+    <div class="popup-modal" id="results-popup">
+        <div class="popup-header">
+            <h3><i class="fas fa-trophy"></i> See Real Results!</h3>
+            <div class="popup-close" onclick="closePopup()">×</div>
+        </div>
+        <div class="popup-content">
+            <p>Discover how our students have excelled after taking our courses. View our outstanding achievements from the last three years.</p>
+            <a href="student-results.html" class="popup-button">View Student Achievements</a>
+        </div>
+    </div>
+
+    <script>
+        // Contact modal functions
+        function openContactModal() {
+            document.getElementById('contact-modal').style.display = 'flex';
+        }
+        
+        function closeContactModal() {
+            document.getElementById('contact-modal').style.display = 'none';
+        }
+        
+        // Popup functions
+        function openPopup() {
+            document.getElementById('results-popup').style.display = 'block';
+        }
+        
+        function closePopup() {
+            document.getElementById('results-popup').style.display = 'none';
+        }
+        
+        // Show popup after 5 seconds
+        setTimeout(openPopup, 5000);
+        
+        // Close modals if clicked outside content
+        document.addEventListener('click', function(event) {
+            const contactModal = document.getElementById('contact-modal');
+            if (event.target === contactModal) {
+                closeContactModal();
+            }
+        });
+    </script>
+</body>
+</html>
