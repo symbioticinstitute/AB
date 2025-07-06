@@ -22,6 +22,11 @@
             --purple: #7e22ce;
             --orange: #ea580c;
             --pink: #db2777;
+            --feature-blue: #2563eb;
+            --feature-teal: #0d9488;
+            --feature-purple: #7e22ce;
+            --feature-orange: #ea580c;
+            --feature-pink: #db2777;
         }
 
         * {
@@ -37,6 +42,49 @@
             line-height: 1.6;
             position: relative;
             overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        .shape {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape.circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--feature-blue);
+            top: 10%;
+            left: 5%;
+        }
+        
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 100px solid var(--feature-purple);
+            top: 20%;
+            right: 8%;
+            animation-delay: -2s;
+        }
+        
+        .shape.square {
+            width: 90px;
+            height: 90px;
+            background: var(--feature-orange);
+            bottom: 15%;
+            left: 10%;
+            border-radius: 15px;
+            animation-delay: -4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
         }
 
         /* Header Styles */
@@ -59,15 +107,10 @@
             gap: 12px;
         }
 
-        .logo-icon {
-            font-size: 32px;
-            color: var(--primary);
-        }
-
         .logo-text {
             font-size: 22px;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--feature-blue); /* Updated to feature blue */
             line-height: 1.2;
         }
 
@@ -85,51 +128,23 @@
             padding: 12px 28px;
             border-radius: 8px;
             transition: all 0.3s ease;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            box-shadow: 0 4px 12px rgba(27, 100, 17, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            background: linear-gradient(135deg, var(--feature-blue), #3b82f6); /* Updated to feature blue */
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
         .about-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(27, 100, 17, 0.4);
-            background: linear-gradient(135deg, var(--primary-light), #0da271);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
         }
 
         /* Hero Banner */
         .hero {
             padding: 80px 5%;
             text-align: center;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--feature-blue), #3b82f6); /* Updated to feature blue */
             color: var(--white);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            opacity: 0.15;
-        }
-
-        .course-tag {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            backdrop-filter: blur(5px);
-            font-weight: 500;
-            position: relative;
-            z-index: 2;
         }
 
         .hero h1 {
@@ -159,6 +174,7 @@
             padding: 80px 5%;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
 
         .section-title {
@@ -197,6 +213,7 @@
             align-items: flex-start;
             padding: 30px;
             position: relative;
+            z-index: 1;
         }
 
         .feature-card:hover {
@@ -233,6 +250,7 @@
             padding: 80px 5%;
             text-align: center;
             background: linear-gradient(135deg, #f0fdf4, #d1fae5);
+            position: relative;
         }
 
         .registration-box {
@@ -244,6 +262,7 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .registration-box::before {
@@ -253,7 +272,7 @@
             left: 0;
             width: 100%;
             height: 8px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: linear-gradient(90deg, var(--feature-blue), #3b82f6);
         }
 
         .registration-box h2 {
@@ -277,7 +296,7 @@
             align-items: center;
             gap: 10px;
             padding: 18px 45px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--feature-blue), #3b82f6);
             color: white;
             border: none;
             border-radius: 50px;
@@ -286,12 +305,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 5px 20px rgba(27, 100, 17, 0.3);
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
         }
 
         .register-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(27, 100, 17, 0.4);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
         }
 
         /* Modal Styles */
@@ -337,17 +356,13 @@
         }
 
         .modal-close:hover {
-            color: var(--primary);
+            color: var(--feature-blue);
         }
 
         .modal-content h3 {
             font-size: 1.8rem;
-            color: var(--primary);
+            color: var(--feature-purple); /* Updated to feature purple */
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
         }
 
         .phone-number {
@@ -357,7 +372,7 @@
             gap: 15px;
             font-size: 2rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--feature-blue);
             padding: 25px;
             background: var(--light);
             border-radius: 15px;
@@ -383,7 +398,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--feature-purple), #a855f7); /* Updated to feature purple */
             color: white;
             padding: 25px;
             border-radius: 16px;
@@ -433,7 +448,7 @@
         .popup-button {
             display: inline-block;
             background: white;
-            color: var(--primary);
+            color: var(--feature-purple);
             padding: 12px 30px;
             border-radius: 50px;
             font-weight: 600;
@@ -519,11 +534,6 @@
                 padding: 60px 5%;
             }
             
-            .course-tag {
-                font-size: 1rem;
-                padding: 8px 20px;
-            }
-            
             .hero h1 {
                 font-size: 1.7rem;
             }
@@ -544,31 +554,31 @@
                 left: 5%;
                 bottom: 20px;
             }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Animated background shapes -->
+    <div class="shape circle"></div>
+    <div class="shape triangle"></div>
+    <div class="shape square"></div>
+
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <div class="logo-icon">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div>
-                <div class="logo-text">Symbiotic Learning</div>
-                <div class="logo-subtext">Academic Excellence</div>
-            </div>
+            <div class="logo-text">Symbiotic Learning</div>
         </div>
         <a href="https://symbioticlearning.com/about" class="about-link">
-            <i class="fas fa-info-circle"></i> About Us
+            About Us
         </a>
     </header>
 
     <!-- Hero Banner -->
     <section class="hero">
-        <div class="course-tag">
-            <i class="fas fa-star"></i> New Course Launch
-        </div>
         <h1>Integrated Board (CBSE) & AMU XI Entrance Success Program-2025</h1>
         <p>Class XI Entrance examination of Aligarh Muslim University is one of the toughest exams at this level. Every year around 25,000 students appear for roughly 1,500 seats, making the competition extremely fierce.</p>
     </section>
@@ -583,55 +593,55 @@
         <div class="features-grid">
             <!-- Feature 1 -->
             <div class="feature-card">
-                <div class="feature-icon" style="background: linear-gradient(135deg, var(--blue), #3b82f6);">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-blue), #3b82f6);">
                     <i class="fas fa-seedling"></i>
                 </div>
                 <div class="feature-content">
-                    <h3 style="color: var(--blue);">Early Foundation & Diagnostic</h3>
+                    <h3 style="color: var(--feature-blue);">Early Foundation & Diagnostic</h3>
                     <p>Begins well before board exams conclude, with diagnostic assessments of Class IX–X fundamentals to identify gaps early and build a strong foundation.</p>
                 </div>
             </div>
             
             <!-- Feature 2 -->
             <div class="feature-card">
-                <div class="feature-icon" style="background: linear-gradient(135deg, var(--teal), #14b8a6);">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-teal), #14b8a6);">
                     <i class="fas fa-book-open"></i>
                 </div>
                 <div class="feature-content">
-                    <h3 style="color: var(--teal);">Integrated Syllabus Mapping</h3>
+                    <h3 style="color: var(--feature-teal);">Integrated Syllabus Mapping</h3>
                     <p>Systematic alignment of Class X revision modules (Physics, Chemistry, Biology/Mathematics or Social Studies) alongside CBSE Class X board preparation.</p>
                 </div>
             </div>
             
             <!-- Feature 3 -->
             <div class="feature-card">
-                <div class="feature-icon" style="background: linear-gradient(135deg, var(--purple), #a855f7);">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-purple), #a855f7);">
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <div class="feature-content">
-                    <h3 style="color: var(--purple);">Progressive Entrance Prep Track</h3>
+                    <h3 style="color: var(--feature-purple);">Progressive Entrance Prep Track</h3>
                     <p>Regularly scheduled modules revisiting Class IX–X concepts in AMU-style objective format, with incremental difficulty and timed practice, ensuring no last-minute cramming.</p>
                 </div>
             </div>
             
             <!-- Feature 4 -->
             <div class="feature-card">
-                <div class="feature-icon" style="background: linear-gradient(135deg, var(--orange), #f97316);">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-orange), #f97316);">
                     <i class="fas fa-landmark"></i>
                 </div>
                 <div class="feature-content">
-                    <h3 style="color: var(--orange);">Indo-Islamic Culture & GK Segment</h3>
+                    <h3 style="color: var(--feature-orange);">Indo-Islamic Culture & GK Segment</h3>
                     <p>Dedicated lessons and quizzes on Indo-Islamic Culture and general knowledge in AMU entrance style, delivered regularly to build cumulative familiarity.</p>
                 </div>
             </div>
             
             <!-- Feature 5 -->
             <div class="feature-card">
-                <div class="feature-icon" style="background: linear-gradient(135deg, var(--pink), #ec4899);">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-pink), #ec4899);">
                     <i class="fas fa-chart-bar"></i>
                 </div>
                 <div class="feature-content">
-                    <h3 style="color: var(--pink);">Frequent Mock Tests & Analytics</h3>
+                    <h3 style="color: var(--feature-pink);">Frequent Mock Tests & Analytics</h3>
                     <p>Periodic full-length AMU-style mock exams under timed conditions; analytics dashboards highlight individual strengths and weaknesses, driving targeted remediation.</p>
                 </div>
             </div>
@@ -659,10 +669,10 @@
     <div class="modal" id="contact-modal">
         <div class="modal-content">
             <div class="modal-close" onclick="closeContactModal()">×</div>
-            <h3><i class="fas fa-phone-alt"></i> Contact Us to Enroll</h3>
+            <h3>Contact Us to Enroll</h3>
             <p>Call our admission counselors to discuss the program and register your child:</p>
             <div class="phone-number">
-                <i class="fas fa-phone"></i> +91-9149822922
+                +91-9149822922
             </div>
             <p class="call-now">Available Monday-Saturday, 9AM to 7PM</p>
         </div>
