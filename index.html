@@ -13,12 +13,13 @@
             --feature-purple: #7e22ce;
             --feature-teal: #0d9488;
             --feature-orange: #ea580c;
+            --feature-pink: #db2777;
+            --feature-gold: #f59e0b;
             --dark: #1f2937;
             --darker: #0f172a;
             --light: #f8fafc;
             --white: #ffffff;
             --success: #10b981;
-            --warning: #f59e0b;
         }
 
         * {
@@ -106,27 +107,37 @@
             line-height: 1.2;
         }
 
-        .logo-subtext {
-            font-size: 12px;
-            color: var(--dark);
-            font-weight: 500;
-            letter-spacing: 1px;
+        .header-buttons {
+            display: flex;
+            gap: 15px;
         }
 
-        .about-link {
+        .header-link {
             text-decoration: none;
             color: var(--white);
             font-weight: 600;
-            padding: 12px 28px;
+            padding: 12px 25px;
             border-radius: 8px;
             transition: all 0.3s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-link {
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
-        .about-link:hover {
+        .results-link {
+            background: linear-gradient(135deg, var(--feature-purple), #a855f7);
+            box-shadow: 0 4px 12px rgba(126, 34, 206, 0.3);
+        }
+
+        .header-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
         }
 
         /* Hero Banner */
@@ -161,23 +172,23 @@
             line-height: 1.7;
         }
 
-        /* WhatsApp Sharing */
-        .whatsapp-share {
+        /* WhatsApp Contact */
+        .whatsapp-contact {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 14px 25px;
+            padding: 15px 30px;
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
-            margin-top: 20px;
+            margin: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transition: all 0.3s;
         }
 
-        .whatsapp-share:hover {
+        .whatsapp-contact:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
         }
@@ -258,7 +269,7 @@
             font-size: 1.05rem;
         }
 
-        /* Registration Section with Timer */
+        /* Registration Section */
         .registration {
             padding: 80px 5%;
             text-align: center;
@@ -285,7 +296,7 @@
             left: 0;
             width: 100%;
             height: 8px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-light));
+            background: linear-gradient(90deg, var(--feature-gold), #fbbf24);
         }
 
         .registration-box h2 {
@@ -304,66 +315,13 @@
             line-height: 1.7;
         }
 
-        /* Countdown Timer */
-        .countdown-timer {
-            background: linear-gradient(135deg, #fff9db, #ffe7ba);
-            border-radius: 16px;
-            padding: 20px;
-            margin: 30px auto;
-            max-width: 500px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .timer-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-
-        .timer-display {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .timer-unit {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 15px;
-            min-width: 70px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        .timer-value {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            line-height: 1;
-        }
-
-        .timer-label {
-            font-size: 0.9rem;
-            color: var(--dark);
-            opacity: 0.8;
-            margin-top: 5px;
-        }
-
-        .timer-note {
-            font-size: 0.95rem;
-            color: var(--warning);
-            font-weight: 500;
-            margin-top: 10px;
-        }
-
         .register-button {
             display: inline-flex;
             align-items: center;
             gap: 10px;
             padding: 18px 45px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
-            color: white;
+            background: linear-gradient(135deg, var(--feature-gold), #fbbf24);
+            color: var(--darker);
             border: none;
             border-radius: 50px;
             font-size: 1.2rem;
@@ -371,41 +329,34 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
             margin-top: 20px;
         }
 
         .register-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
         }
 
-        /* Popup Modals */
-        .popup {
+        /* Popup Modal */
+        .popup-modal {
             position: fixed;
             bottom: 30px;
             right: 30px;
+            background: linear-gradient(135deg, var(--feature-purple), #a855f7);
+            color: white;
+            padding: 25px;
             border-radius: 16px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
             z-index: 1500;
             max-width: 400px;
             display: none;
             animation: slideIn 0.5s ease-out;
-            padding: 25px;
-            color: white;
         }
 
         @keyframes slideIn {
             0% { transform: translateX(100%); opacity: 0; }
             100% { transform: translateX(0); opacity: 1; }
-        }
-
-        #achievements-popup {
-            background: linear-gradient(135deg, var(--feature-purple), #a855f7);
-        }
-
-        #contact-popup {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
         }
 
         .popup-header {
@@ -442,6 +393,7 @@
         .popup-button {
             display: inline-block;
             background: white;
+            color: var(--feature-purple);
             padding: 12px 30px;
             border-radius: 50px;
             font-weight: 600;
@@ -450,17 +402,115 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
-        #achievements-popup .popup-button {
-            color: var(--feature-purple);
-        }
-
-        #contact-popup .popup-button {
-            color: var(--primary-blue);
-        }
-
         .popup-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Registration Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 90%;
+            width: 500px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            position: relative;
+            animation: popIn 0.4s ease-out;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--feature-purple);
+        }
+
+        .modal-content h3 {
+            font-size: 1.8rem;
+            color: var(--feature-gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .modal-content h3 i {
+            color: var(--feature-gold);
+        }
+
+        .phone-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--feature-purple);
+            padding: 25px;
+            background: var(--light);
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .phone-number:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--feature-purple), #a855f7);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(126, 34, 206, 0.3);
+            margin-top: 15px;
+        }
+
+        .modal-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(126, 34, 206, 0.4);
+        }
+
+        .call-now {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-top: 10px;
+            font-weight: 500;
         }
 
         /* Footer */
@@ -502,7 +552,18 @@
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
+            }
+            
+            .header-buttons {
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header-link {
+                width: 100%;
+                justify-content: center;
             }
             
             .hero h1 {
@@ -529,7 +590,7 @@
                 font-size: 1.4rem;
             }
             
-            .popup {
+            .popup-modal {
                 max-width: 90%;
                 right: 5%;
                 left: 5%;
@@ -560,13 +621,14 @@
                 font-size: 1.8rem;
             }
             
-            .timer-unit {
-                min-width: 60px;
-                padding: 10px;
+            .modal-content {
+                padding: 30px 20px;
             }
             
-            .timer-value {
-                font-size: 1.8rem;
+            .phone-number {
+                font-size: 1.5rem;
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -582,9 +644,14 @@
         <div class="logo">
             <div class="logo-text">Symbiotic Learning</div>
         </div>
-        <a href="https://symbioticlearning.com/about" class="about-link">
-            About Us
-        </a>
+        <div class="header-buttons">
+            <a href="https://symbioticlearning.com/about" class="header-link about-link">
+                <i class="fas fa-info-circle"></i> About Us
+            </a>
+            <a href="student-results.html" class="header-link results-link">
+                <i class="fas fa-trophy"></i> See Our Results
+            </a>
+        </div>
     </header>
 
     <!-- Hero Banner -->
@@ -592,9 +659,8 @@
         <h1>Integrated CBSE & AMU XI Entrance Success Program-2025</h1>
         <p>Class XI Entrance examination of Aligarh Muslim University is one of the toughest exams at this level. Every year around 25,000 students appear for roughly 1,500 seats, making the competition extremely fierce.</p>
         
-        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20AMU%20XI%20Entrance%20Prep%20Course%20for%202025%3A%20https%3A%2F%2Fsymbioticlearning.com%2Famu-course" 
-           class="whatsapp-share" target="_blank">
-            <i class="fab fa-whatsapp"></i> Share on WhatsApp
+        <a href="https://wa.me/9191498222922" class="whatsapp-contact" target="_blank">
+            <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
         </a>
     </section>
 
@@ -660,40 +726,27 @@
                     <p>Periodic full-length AMU-style mock exams under timed conditions; analytics dashboards highlight individual strengths and weaknesses, driving targeted remediation.</p>
                 </div>
             </div>
+            
+            <!-- New Feature 6 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-gold), #fbbf24);">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="feature-content">
+                    <h3 style="color: var(--feature-gold);">Course Guided by AMU Alumni</h3>
+                    <p>Learn from experienced mentors who have successfully qualified these exams and understand exactly what it takes to succeed at AMU.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Registration Section with Timer -->
+    <!-- Registration Section -->
     <section class="registration">
         <div class="registration-box">
             <h2>Secure Your Child's Future Today</h2>
             <p>Limited seats available for our 2025 integrated program. Join hundreds of successful students who have excelled in both CBSE and AMU entrance exams.</p>
             
-            <!-- Countdown Timer -->
-            <div class="countdown-timer">
-                <div class="timer-title">Early Bird Registration Ends In:</div>
-                <div class="timer-display">
-                    <div class="timer-unit">
-                        <div class="timer-value" id="days">07</div>
-                        <div class="timer-label">Days</div>
-                    </div>
-                    <div class="timer-unit">
-                        <div class="timer-value" id="hours">23</div>
-                        <div class="timer-label">Hours</div>
-                    </div>
-                    <div class="timer-unit">
-                        <div class="timer-value" id="minutes">45</div>
-                        <div class="timer-label">Minutes</div>
-                    </div>
-                    <div class="timer-unit">
-                        <div class="timer-value" id="seconds">30</div>
-                        <div class="timer-label">Seconds</div>
-                    </div>
-                </div>
-                <div class="timer-note">Register now to get 15% off the course fee!</div>
-            </div>
-            
-            <button class="register-button" onclick="openContactModal()">
+            <button class="register-button" onclick="openRegistrationModal()">
                 <i class="fas fa-edit"></i> Register Now
             </button>
         </div>
@@ -706,13 +759,13 @@
     </footer>
 
     <!-- Achievements Popup -->
-    <div class="popup" id="achievements-popup">
+    <div class="popup-modal" id="results-popup">
         <div class="popup-header">
-            <h3><i class="fas fa-trophy"></i> Proven Results!</h3>
-            <div class="popup-close" onclick="closePopup('achievements-popup')">×</div>
+            <h3><i class="fas fa-trophy"></i> Proven Track Record!</h3>
+            <div class="popup-close" onclick="closePopup('results-popup')">×</div>
         </div>
         <div class="popup-content">
-            <p>Our students have consistently achieved outstanding results over the past 3 years:</p>
+            <p>Our students have consistently achieved outstanding results:</p>
             <p>✅ 92% selection rate in AMU entrance</p>
             <p>⭐️ 150+ students successfully admitted</p>
             <p>🏆 15 school toppers from our program</p>
@@ -720,28 +773,32 @@
         </div>
     </div>
 
-    <!-- Contact Popup -->
-    <div class="popup" id="contact-popup">
-        <div class="popup-header">
-            <h3><i class="fas fa-phone-alt"></i> Limited Seats!</h3>
-            <div class="popup-close" onclick="closePopup('contact-popup')">×</div>
-        </div>
-        <div class="popup-content">
-            <p>Don't miss this opportunity! Contact us now to secure your child's spot:</p>
-            <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 12px; margin: 20px 0;">
-                <p style="font-weight: 600; margin-bottom: 10px;">Call: +91-9149822922</p>
-                <p style="font-size: 0.95rem;">Available Mon-Sat, 9AM-7PM</p>
+    <!-- Registration Modal -->
+    <div class="modal" id="registration-modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal()">×</div>
+            <h3><i class="fas fa-star"></i> It's Time to Take Action!</h3>
+            <p>You've seen what we offer. Now it's time to secure your child's future. Contact us now to enroll in our proven program.</p>
+            
+            <div class="phone-number">
+                <i class="fas fa-phone"></i> +91-9149822922
             </div>
-            <a href="tel:+919149822922" class="popup-button">
-                <i class="fas fa-phone"></i> Call Now
+            <p class="call-now">Available Monday-Saturday, 9AM to 7PM</p>
+            
+            <a href="tel:+9191498222922" class="modal-button">
+                <i class="fas fa-phone"></i> Call Now to Enroll
             </a>
         </div>
     </div>
 
     <script>
-        // Contact modal function
-        function openContactModal() {
-            alert("Please call us at +91-9149822922 to enroll. Our counselors are available Mon-Sat, 9AM-7PM.");
+        // Modal functions
+        function openRegistrationModal() {
+            document.getElementById('registration-modal').style.display = 'flex';
+        }
+        
+        function closeModal() {
+            document.getElementById('registration-modal').style.display = 'none';
         }
         
         // Popup functions
@@ -749,45 +806,18 @@
             document.getElementById(id).style.display = 'none';
         }
         
-        // Show achievements popup after 15 seconds
+        // Show achievements popup after 10 seconds
         setTimeout(() => {
-            document.getElementById('achievements-popup').style.display = 'block';
-        }, 15000);
+            document.getElementById('results-popup').style.display = 'block';
+        }, 10000);
         
-        // Show contact popup after 30 seconds
-        setTimeout(() => {
-            document.getElementById('contact-popup').style.display = 'block';
-        }, 30000);
-        
-        // Countdown timer
-        function updateCountdown() {
-            const daysEl = document.getElementById('days');
-            const hoursEl = document.getElementById('hours');
-            const minutesEl = document.getElementById('minutes');
-            const secondsEl = document.getElementById('seconds');
-            
-            const now = new Date();
-            const targetDate = new Date(now);
-            targetDate.setDate(now.getDate() + 7);
-            
-            const diff = targetDate - now;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            daysEl.textContent = days.toString().padStart(2, '0');
-            hoursEl.textContent = hours.toString().padStart(2, '0');
-            minutesEl.textContent = minutes.toString().padStart(2, '0');
-            secondsEl.textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        // Initialize and update timer every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-        
-        // Close popups if clicked outside (not implemented in this version)
+        // Close modals if clicked outside content
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('registration-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
