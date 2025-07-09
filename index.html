@@ -757,7 +757,20 @@
         <p>&copy; 2025 Symbiotic Learning. All Rights Reserved.</p>
         <p>Transforming Education Through Innovation</p>
     </footer>
+    <!-- Achievements Popup -->
+    <div class="popup-modal" id="results-popup">
+        <div class="popup-header">
+            <h3><i class="fas fa-trophy"></i> Proven Track Record!</h3>
+            <div class="popup-close" onclick="closePopup('results-popup')">×</div>
+        </div>
+       <div class="popup-content">
+    <p>Over the last three years...</p>
+    <a href="https://results.symbioticinstitute.com/" class="popup-button">View Detailed Achievements</a>
+</div>
+    </div>
 
+    <!-- Registration Modal -->
+    <div class="modal" id="registration-modal">
     <!-- Achievements Popup -->
     <div class="popup-modal" id="results-popup">
         <div class="popup-header">
@@ -788,33 +801,36 @@
         </div>
     </div>
 
-    <script>
-        // Modal functions
-        function openRegistrationModal() {
-            document.getElementById('registration-modal').style.display = 'flex';
+  <script>
+    // Modal functions
+    function openRegistrationModal() {
+        document.getElementById('registration-modal').style.display = 'flex';
+    }
+    
+    function closeModal() {
+        document.getElementById('registration-modal').style.display = 'none';
+    }
+    
+    // Popup functions
+    function closePopup(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+    
+    // NEW: Show differentiation popup after 2 seconds
+    setTimeout(() => {
+        document.getElementById('differentiation-popup').style.display = 'block';
+    }, 5000);
+
+    // Show achievements popup after 15 seconds (changed from 10 seconds)
+    setTimeout(() => {
+        document.getElementById('results-popup').style.display = 'block';
+    }, 15000);
+    
+    // Close modals if clicked outside content (keep this exactly as is)
+    document.addEventListener('click', function(event) {
+        const modal = document.getElementById('registration-modal');
+        if (event.target === modal) {
+            closeModal();
         }
-        
-        function closeModal() {
-            document.getElementById('registration-modal').style.display = 'none';
-        }
-        
-        // Popup functions
-        function closePopup(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-        
-        // Show achievements popup after 10 seconds
-        setTimeout(() => {
-            document.getElementById('results-popup').style.display = 'block';
-        }, 10000);
-        
-        // Close modals if clicked outside content
-        document.addEventListener('click', function(event) {
-            const modal = document.getElementById('registration-modal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-    </script>
-</body>
-</html>
+    });
+</script>
