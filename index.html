@@ -20,6 +20,12 @@
             --light: #f8fafc;
             --white: #ffffff;
             --success: #10b981;
+            
+            /* New color variables for the popup sections */
+            --problem-bg: #fee2e2; /* Light red background */
+            --problem-text: #b91c1c; /* Dark red text */
+            --solution-bg: #dcfce7; /* Light green background */
+            --solution-text: #166534; /* Dark green text */
         }
 
         * {
@@ -522,7 +528,7 @@
             font-size: 0.95rem;
         }
 
-        /* ===== Improved Popup Styles ===== */
+        /* ===== Enhanced Popup Styles ===== */
         #differentiation-popup {
             background: linear-gradient(135deg, #0d9488, #10b981);
             max-width: 450px;
@@ -542,11 +548,22 @@
             font-size: 1.7rem;
         }
         
-        .popup-section {
-            background: rgba(255, 255, 255, 0.15);
+        /* Problem section with red colors */
+        .problem-section {
+            background: var(--problem-bg);
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 20px;
+            color: var(--problem-text);
+        }
+        
+        /* Solution section with green colors */
+        .solution-section {
+            background: var(--solution-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: var(--solution-text);
         }
         
         .popup-section-title {
@@ -577,10 +594,19 @@
         }
         
         .checkmark {
-            color: #fef08a;
             font-size: 1.2rem;
             flex-shrink: 0;
             margin-top: 3px;
+        }
+        
+        /* Problem section checkmarks */
+        .problem-section .checkmark {
+            color: var(--problem-text);
+        }
+        
+        /* Solution section checkmarks */
+        .solution-section .checkmark {
+            color: var(--solution-text);
         }
         
         .popup-cta {
@@ -878,7 +904,8 @@
                     "Just another online class." <span style="font-style: italic;">But it's not.</span>
                 </p>
                 
-                <div class="popup-section">
+                <!-- Problem Section (Red) -->
+                <div class="popup-section problem-section">
                     <div class="popup-section-title">
                         <i class="fas fa-exclamation-circle"></i>
                         <span>Most online courses have:</span>
@@ -903,7 +930,8 @@
                     </ul>
                 </div>
                 
-                <div class="popup-section">
+                <!-- Solution Section (Green) -->
+                <div class="popup-section solution-section">
                     <div class="popup-section-title">
                         <i class="fas fa-star"></i>
                         <span>Here's how we're different:</span>
@@ -997,7 +1025,7 @@
             document.getElementById('differentiation-popup').style.display = 'block';
         }, 3000);
 
-        // Show achievements popup after 30 seconds
+        // Show achievements popup after 20 seconds
         setTimeout(() => {
             document.getElementById('results-popup').style.display = 'block';
         }, 20000);
