@@ -759,7 +759,7 @@
 </footer>
 
 <!-- Differentiation Popup -->
-<div class="popup-modal" id="differentiation-popup" style="background: linear-gradient(135deg, #0d9488, #10b981);">
+<div class="popup-modal" id="differentiation-popup" style="background: linear-gradient(135deg, #0d9488, #10b981); bottom: 20px; right: 20px; max-width: 95%;">
     <div class="popup-header">
         <h3><i class="fas fa-lightbulb"></i> We Know What You're Thinking...</h3>
         <div class="popup-close" onclick="closePopup('differentiation-popup')">×</div>
@@ -791,8 +791,8 @@
         
         <p style="font-weight: 500; margin-bottom: 15px;">We stay involved — like a partner in your child's growth.</p>
         
-        <a href="https://wa.me/9191498222922" class="popup-button" style="background: white; color: #0d9488;">
-            <i class="fab fa-whatsapp"></i> Message Us Now
+        <a href="https://symbioticlearning.com/courses" class="popup-button" style="background: white; color: #0d9488;">
+            <i class="fas fa-book-open"></i> Continue Exploring Our Course
         </a>
     </div>
 </div>
@@ -806,24 +806,6 @@
     <div class="popup-content">
         <p>Over the last three years, our students have consistently secured admissions to Aligarh Muslim University across various courses through our comprehensive offline classes and online learning programs. If you want your child to receive proper guidance for admission to Aligarh Muslim University, we're here to help make it happen.</p>
         <a href="https://results.symbioticinstitute.com/" class="popup-button">View Detailed Achievements</a>
-    </div>
-</div>
-
-<!-- Registration Modal -->
-<div class="modal" id="registration-modal">
-    <div class="modal-content">
-        <div class="modal-close" onclick="closeModal()">×</div>
-        <h3><i class="fas fa-star"></i> It's Time to Take Action!</h3>
-        <p>You've seen what we offer. Now it's time to secure your child's future. Contact us now to enroll in our proven program.</p>
-        
-        <div class="phone-number">
-            <i class="fas fa-phone"></i> +91-9149822922
-        </div>
-        <p class="call-now">Available Monday-Saturday, 9AM to 7PM</p>
-        
-        <a href="tel:+9191498222922" class="modal-button">
-            <i class="fas fa-phone"></i> Call Now to Enroll
-        </a>
     </div>
 </div>
 
@@ -842,15 +824,15 @@
         document.getElementById(id).style.display = 'none';
     }
     
-    // Show differentiation popup after 5 seconds
+    // Show differentiation popup after 3 seconds
     setTimeout(() => {
         document.getElementById('differentiation-popup').style.display = 'block';
-    }, 5000);
+    }, 3000);
 
-    // Show achievements popup after 15 seconds
+    // Show achievements popup after 20 seconds
     setTimeout(() => {
         document.getElementById('results-popup').style.display = 'block';
-    }, 15000);
+    }, 20000);
     
     // Close modals if clicked outside content
     document.addEventListener('click', function(event) {
