@@ -341,6 +341,9 @@
         /* Popup Modal */
         .popup-modal {
             position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--feature-purple), #a855f7);
             color: white;
             padding: 25px;
             border-radius: 16px;
@@ -390,7 +393,7 @@
         .popup-button {
             display: inline-block;
             background: white;
-            color: var(--primary-blue);
+            color: var(--feature-purple);
             padding: 12px 30px;
             border-radius: 50px;
             font-weight: 600;
@@ -519,20 +522,93 @@
             font-size: 0.95rem;
         }
 
-        /* Popup Positioning */
+        /* ===== Improved Popup Styles ===== */
         #differentiation-popup {
             background: linear-gradient(135deg, #0d9488, #10b981);
-            bottom: 50px;
-            right: 20px;
+            max-width: 450px;
+            padding: 30px;
         }
-
-        #results-popup {
-            background: linear-gradient(135deg, var(--feature-purple), #a855f7);
-            bottom: 20px;
-            right: 20px;
+        
+        .popup-container {
+            max-height: 75vh;
+            overflow-y: auto;
         }
-
-        /* Responsive Styles */
+        
+        .popup-header {
+            margin-bottom: 20px;
+        }
+        
+        .popup-header h3 {
+            font-size: 1.7rem;
+        }
+        
+        .popup-section {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .popup-section-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .popup-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .popup-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .popup-list li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .checkmark {
+            color: #fef08a;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .popup-cta {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+        
+        .popup-cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: #0d9488;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .popup-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Mobile-specific adjustments */
         @media (max-width: 900px) {
             .features-grid {
                 grid-template-columns: 1fr;
@@ -602,17 +678,30 @@
             
             .popup-modal {
                 max-width: 90%;
-                left: 5%;
                 right: 5%;
-                bottom: 30px;
+                left: 5%;
+                bottom: 20px;
             }
             
             #differentiation-popup {
-                bottom: 50px;
+                padding: 20px;
             }
             
-            #results-popup {
-                bottom: 30px;
+            .popup-header h3 {
+                font-size: 1.5rem;
+            }
+            
+            .popup-section {
+                padding: 15px;
+            }
+            
+            .popup-list li {
+                font-size: 0.95rem;
+            }
+            
+            .popup-cta-button {
+                padding: 12px 25px;
+                font-size: 0.95rem;
             }
         }
 
@@ -647,14 +736,6 @@
                 font-size: 1.5rem;
                 flex-direction: column;
                 gap: 10px;
-            }
-            
-            .popup-modal {
-                padding: 20px;
-            }
-            
-            .popup-header h3 {
-                font-size: 1.4rem;
             }
         }
     </style>
@@ -786,40 +867,81 @@
 
     <!-- Differentiation Popup -->
     <div class="popup-modal" id="differentiation-popup">
-        <div class="popup-header">
-            <h3><i class="fas fa-lightbulb"></i> We Know What You're Thinking...</h3>
-            <div class="popup-close" onclick="closePopup('differentiation-popup')">×</div>
-        </div>
-        <div class="popup-content">
-            <p style="font-weight: 500; margin-bottom: 15px;">"Just another online class." <span style="font-style: italic;">But it's not.</span></p>
-            
-            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
-                <p style="margin-bottom: 12px; font-size: 0.95rem;">Most online courses have:</p>
-                <ul style="text-align: left; padding-left: 20px; margin-bottom: 15px; font-size: 0.9rem;">
-                    <li style="margin-bottom: 8px;">Hundreds in a batch</li>
-                    <li style="margin-bottom: 8px;">No follow-up or personal attention</li>
-                    <li style="margin-bottom: 8px;">One-way communication</li>
-                    <li style="margin-bottom: 8px;">Generic preparation</li>
-                </ul>
+        <div class="popup-container">
+            <div class="popup-header">
+                <h3><i class="fas fa-lightbulb"></i> We Know What You're Thinking...</h3>
+                <div class="popup-close" onclick="closePopup('differentiation-popup')">×</div>
             </div>
             
-            <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
-                <p style="margin-bottom: 12px; font-weight: 600;">Here's how we're different:</p>
-                <ul style="text-align: left; padding-left: 20px; margin-bottom: 15px; font-size: 0.95rem;">
-                    <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;"><span style="color: #fef08a;">✓</span> Small, focused batches</li>
-                    <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;"><span style="color: #fef08a;">✓</span> Regular parent updates</li>
-                    <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;"><span style="color: #fef08a;">✓</span> One-on-one mentorship</li>
-                    <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;"><span style="color: #fef08a;">✓</span> Real two-way interaction</li>
-                    <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;"><span style="color: #fef08a;">✓</span> AMU-qualified mentors</li>
-                    <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;"><span style="color: #fef08a;">✓</span> Integrated CBSE+AMU prep</li>
-                </ul>
+            <div class="popup-content">
+                <p style="font-weight: 500; margin-bottom: 25px; font-size: 1.1rem; text-align: center;">
+                    "Just another online class." <span style="font-style: italic;">But it's not.</span>
+                </p>
+                
+                <div class="popup-section">
+                    <div class="popup-section-title">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Most online courses have:</span>
+                    </div>
+                    <ul class="popup-list">
+                        <li>
+                            <span class="checkmark">•</span>
+                            <span>Hundreds in a batch with no personal attention</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">•</span>
+                            <span>One-way communication with no real interaction</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">•</span>
+                            <span>Generic preparation not tailored to specific exams</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">•</span>
+                            <span>No follow-up or progress tracking</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="popup-section">
+                    <div class="popup-section-title">
+                        <i class="fas fa-star"></i>
+                        <span>Here's how we're different:</span>
+                    </div>
+                    <ul class="popup-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            <span>Small, focused batches for personalized attention</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            <span>Regular parent updates on student progress</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            <span>One-on-one mentorship with AMU-qualified experts</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            <span>Real two-way interaction - we listen and adapt</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            <span>Integrated CBSE + AMU preparation methodology</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <p style="font-weight: 500; margin: 25px 0; font-size: 1.1rem; text-align: center; line-height: 1.6;">
+                    We stay involved throughout your child's journey — acting as a true partner in their academic growth and success.
+                </p>
+                
+                <div class="popup-cta">
+                    <a href="https://courses.symbioticinstitute.com/" class="popup-cta-button">
+                        <i class="fas fa-book-open"></i> Explore Course Details
+                    </a>
+                </div>
             </div>
-            
-            <p style="font-weight: 500; margin-bottom: 15px;">We stay involved — like a partner in your child's growth.</p>
-            
-            <a href="https://courses.symbioticinstitute.com/" class="popup-button" style="background: white; color: #0d9488; display: block; text-align: center;">
-                <i class="fas fa-book-open"></i> Explore Course Details
-            </a>
         </div>
     </div>
 
@@ -831,7 +953,7 @@
         </div>
         <div class="popup-content">
             <p>Over the last three years, our students have consistently secured admissions to Aligarh Muslim University across various courses through our comprehensive offline classes and online learning programs. If you want your child to receive proper guidance for admission to Aligarh Muslim University, we're here to help make it happen.</p>
-            <a href="https://results.symbioticinstitute.com/" class="popup-button" style="background: white; color: var(--feature-purple); display: block; text-align: center; margin-top: 20px;">
+            <a href="https://results.symbioticinstitute.com/" class="popup-button" style="display: block; text-align: center; margin-top: 20px;">
                 View Detailed Achievements
             </a>
         </div>
